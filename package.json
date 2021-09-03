@@ -1,0 +1,40 @@
+{
+  "name": "js-collection",
+  "version": "0.0.1",
+  "description": "Node JS Collection Package",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nebulludev/js-collection.git"
+  },
+  "keywords": [
+    "collection",
+    "util",
+    "linkedlist",
+    "stack",
+    "queue",
+    "tree",
+    "map",
+    "set",
+    "heap",
+    "hashing",
+    "graph",
+    "matrix"
+  ],
+  "author": "Rıza Kaan Ucak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nebulludev/js-collection/issues"
+  },
+  "homepage": "https://github.com/nebulludev/js-collection#readme",
+  "devDependencies": {
+    "jest": "^27.1.0"
+  },
+  "dependencies": {
+    "firebase": "^9.0.1"
+  }
+}
