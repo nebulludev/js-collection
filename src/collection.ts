@@ -1,17 +1,22 @@
-const { Iterator }  = require('./iterator');
+import { Iterator } from "./iterator";
 
-class Collection {
-    #size = 0
+export interface Collection<T> {
+    
+    add(item: T): void;
 
+    remove(item: T): void;
+
+    clear(): void;
+
+    contains(item: T): boolean;
+    
     /**
      * Returns the number of elements in this collection. 
      * If this collection contains more than INTEGER_MAX_VALUE elements, returns MAX_VALUE
      * 
      * @returns the number of elements in this collection
      */
-    size() {
-        return this.#size;
-    }
+    size() : number;
 
 
     /**
@@ -19,12 +24,7 @@ class Collection {
      * 
      * @returns {[boolean]} true if this collection contains no elements
      */
-    isEmpty() {
-        if (this.#size) 
-            return true;
-        else
-            return false;
-    }
+    isEmpty() : boolean;
 
 
     /**
@@ -33,13 +33,5 @@ class Collection {
      * 
      * @returns {[Iterator]} over the elements in this collection
      */
-    iterator() {}
-
-    /**
-     */
-    add(item) {}
-
-    remove(item) {}
+    iterator(): Iterator<T>;
 }
-
-module.exports = { Collection : Collection }

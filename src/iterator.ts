@@ -1,16 +1,10 @@
-'use strict';
-
-class Iterator {
-    constructor(item) {
-        this.item = item
-    }
-
+export interface Iterator<T> {
     /**
      * Returns if the iteration has more elements.
      * 
      * @returns {[boolean]} if the iteration has more elements.
     */
-    has() {}
+    has(): boolean;
 
 
     /**
@@ -19,7 +13,7 @@ class Iterator {
      * @returns the next element in the iteration
      * @throws NoSuchElementException
     */
-    next() {}
+    next(): IteratorResult<T>;
 
 
     /**
@@ -28,7 +22,5 @@ class Iterator {
      * @returns the next element in the iteration
      * @throws NoSuchElementException
     */
-    remove() {}
+    remove(): void;
 }
-
-module.exports = {Iterator: Iterator};
