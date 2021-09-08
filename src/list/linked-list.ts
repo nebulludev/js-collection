@@ -1,5 +1,5 @@
+import { Collection } from "../collection";
 import { Iterator } from "../iterator";
-import { List } from "./list";
 
 export class Node<T> {
     private _item!: T;
@@ -31,7 +31,7 @@ export class Node<T> {
     }
 }
 
-export class LinkedList<T> implements List<T> {
+export class LinkedList<T> implements Collection<T> {
 
     #size!: number;
 
@@ -48,7 +48,21 @@ export class LinkedList<T> implements List<T> {
     }
 
     index(item: T): number {
-        throw new Error("Method not implemented.");
+        let index = 0;
+        for (let cur = this.#first; cur != this.#last; cur = cur.next) {
+
+            if (cur == null || cur == undefined ) {
+                return -1;
+            }
+
+            if (cur.item === item) {
+                return index;
+            }
+
+            index++;
+        }
+
+        throw new Error("Item not found !");
     }
 
     lastIndex(item: T): number {
@@ -59,7 +73,7 @@ export class LinkedList<T> implements List<T> {
         throw new Error("Method not implemented.");
     }
 
-    add2(index: number, item: T): void {
+    insert(index: number, item: T): void {
         throw new Error("Method not implemented.");
     }
 
@@ -100,7 +114,20 @@ export class LinkedList<T> implements List<T> {
     }
     
     get(index: number): T {
-        throw new Error("Method not implemented.");
+        let node = this.#first;
+
+        if (index >= this.#size) {
+            throw new Error("Index out of range !");   
+        }
+
+        for (let i = 0; i < this.#size; i++) {
+            if (i === index) {
+                return node.item;       
+            }
+            node = node.next;
+        }
+
+        return node.item;
     }
 
     getFirst(): Node<T> {
@@ -124,10 +151,21 @@ export class LinkedList<T> implements List<T> {
     }
 
     clear(): void {
-        throw new Error("Method not implemented.");
+        let node = this.#first;
+        this.#first = null!;
+        this.#last = null!;
+
+        for (;;) {
+            node = node.next;
+            if (node === null || node.next === undefined) {
+                break;
+            }
+        }
+
+        this.#size = 0;
     }
 
-    contains(item: T): void {
+    contains(item: T): boolean {
         throw new Error("Method not implemented.");
     }
 

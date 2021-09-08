@@ -8,6 +8,8 @@ export interface Collection<T> {
 
     clear(): void;
 
+    // index(item: T): number;
+
     contains(item: T): boolean;
     
     /**
