@@ -1,4 +1,4 @@
-const { LinkedList } = require("../lib/list/linked-list");
+const { LinkedList } = require("../lib/linked-list");
 
 const ZERO_SIZE = 0;
 const ONE_SIZE = 1;

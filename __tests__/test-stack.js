@@ -1,4 +1,4 @@
-const { Stack } = require("../lib/list/stack");
+const { Stack } = require("../lib/stack");
 
 const ZERO_SIZE = 0;
 const ONE_SIZE = 1;

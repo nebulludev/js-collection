@@ -1,5 +1,5 @@
-import { Collection } from "../collection";
-import { Iterator } from "../iterator";
+import { Collection } from "./collection";
+import { Iterator } from "./iterator";
 
 export class Node<T> {
     private _item!: T;

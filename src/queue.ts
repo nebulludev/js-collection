@@ -1,18 +1,19 @@
-import { Iterator } from "../iterator";
+import { Collection } from "./collection";
+import { Iterator } from "./iterator";
 
-export class Stack<T> {
+export class Queue<T> implements Collection<T> {
     #elements: any[] = [];
     
-    push(item: T) {
-        this.#elements.push(item);
+    add(item: T): void {
+        throw new Error("Method not implemented.");
     }
 
-    pop() {
-        return this.#elements.pop();
+    remove(item: T): void {
+        throw new Error("Method not implemented.");
     }
 
-    peek() {
-        return this.#elements[this.#elements.length - 1];
+    get(index: number): T {
+        return this.#elements[index];
     }
 
     clear(): void {
