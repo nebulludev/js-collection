@@ -1,9 +1,18 @@
-const { LinkedList } = require('./lib/linked_list');
+const { AvlTree } = require('./lib/avl-tree');
 
+
+let tree = new AvlTree();
+tree.isDebug = true;
+tree.root = tree.insert(tree.root, 10);
+tree.root = tree.insert(tree.root, 20);
+tree.root = tree.insert(tree.root, 30);
+tree.root = tree.insert(tree.root, 40);
+tree.root = tree.insert(tree.root, 50);
+tree.root = tree.insert(tree.root, 25);
+tree.root = tree.insert(tree.root, 26);
+
+
+
+
+tree.print(tree.root)
 // exports.Iterator = Iterator;
-var list = new LinkedList();
-list.add(55);
-list.add(4);
-list.add(10);
-list.add(33);
-list.print()
